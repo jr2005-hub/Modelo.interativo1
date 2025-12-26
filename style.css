@@ -1,0 +1,780 @@
+
+body {
+    background: #282828;
+    color: #111;
+    overflow-x: hidden;
+}
+
+/* Background JM Design - Fixo */
+.topo {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* centraliza horizontal */
+    align-items: center;     /* centraliza vertical */
+    padding: 40px 0;
+}
+
+.logo {
+    max-width: 280px;   /* ajuste o tamanho se quiser */
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Conteúdo */
+.content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+
+/* Botões com imagens */
+.links {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.link-item {
+    position: relative;
+    width: 100%;
+    height: 300px; /* ALTURA DOS BOTÕES */
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.link-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+}
+
+/* BOTÃO PRINCIPAL */
+.neon-button {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 300px;
+    border-radius: 80px;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    padding-left: 60px;
+    padding-right: 40px;
+
+    background: linear-gradient(
+        90deg,
+        #6a5cff,
+        #b94cff,
+        #ff4fd8
+    );
+
+    box-shadow:
+        0 0 0 6px rgba(255,255,255,0.08),
+        0 10px 30px rgba(0,0,0,0.4),
+        0 0 35px rgba(186, 76, 255, 0.7);
+
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* HOVER BOTÃO */
+.neon-button:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 0 0 6px rgba(255,255,255,0.12),
+        0 18px 45px rgba(0,0,0,0.5),
+        0 0 50px rgba(255, 79, 216, 0.9);
+}
+
+/* CLIQUE */
+.neon-button:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+/* FUNDO INTERNO */
+.neon-button::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: 70px;
+    background: linear-gradient(180deg, #f0f0f0, #dcdcdc);
+    z-index: 0;
+    transition: background 0.3s ease;
+}
+
+/* FUNDO INTERNO NO HOVER */
+.neon-button:hover::before {
+    background: linear-gradient(180deg, #ffffff, #eaeaea);
+}
+
+/* ÍCONE CIRCULAR */
+.icon-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 200px;
+    height: 200px;
+    min-width: 200px;
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #4f6bff, #ff4fd8);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        inset 0 0 0 6px rgba(255,255,255,0.35),
+        0 0 25px rgba(255, 79, 216, 0.9);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* ÍCONE HOVER */
+.neon-button:hover .icon-wrapper {
+    transform: scale(1.05) rotate(3deg);
+    box-shadow:
+        inset 0 0 0 6px rgba(255,255,255,0.45),
+        0 0 35px rgba(255, 79, 216, 1);
+}
+
+.icon-wrapper img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+/* TEXTO */
+.button-text {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+    color: #111;
+    font-family: "Poppins", sans-serif;
+    transition: transform 0.3s ease;
+}
+
+/* TEXTO HOVER */
+.neon-button:hover .button-text {
+    transform: translateX(6px);
+}
+
+.button-text small {
+    font-size: 14px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.button-text strong {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+
+/* BOTÃO WHATSAPP */
+.neon-button.whatsapp {
+    background: linear-gradient(
+        90deg,
+        #25D366,
+        #1ebe5d,
+        #128C7E
+    );
+
+    box-shadow:
+        0 0 0 6px rgba(255,255,255,0.08),
+        0 10px 30px rgba(0,0,0,0.4),
+        0 0 35px rgba(37, 211, 102, 0.7);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.neon-button.whatsapp:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 0 0 6px rgba(255,255,255,0.12),
+        0 18px 45px rgba(0,0,0,0.5),
+        0 0 55px rgba(37, 211, 102, 0.9);
+}
+
+/* FUNDO INTERNO */
+.neon-button.whatsapp::before {
+    background: linear-gradient(180deg, #eafff2, #d1f5e2);
+}
+
+/* ÍCONE WHATSAPP */
+.neon-button.whatsapp .icon-wrapper {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+
+    box-shadow:
+        inset 0 0 0 6px rgba(255,255,255,0.35),
+        0 0 30px rgba(37, 211, 102, 0.9);
+}
+
+/* TEXTO */
+.neon-button.whatsapp .button-text {
+    color: #0f5132;
+}
+
+.neon-button.whatsapp .button-text small {
+    opacity: 0.75;
+}
+
+.neon-button.whatsapp .button-text strong {
+    color: #0b3d2e;
+}
+
+
+/* INSTAGRAM */
+.neon-button.instagram {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 300px;
+    border-radius: 80px;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    gap: 30px;
+    padding-left: 60px;
+    padding-right: 40px;
+
+    background: linear-gradient(
+        90deg,
+        #f58529,
+        #dd2a7b,
+        #8134af,
+        #515bd4
+    );
+
+    box-shadow:
+        0 0 0 6px rgba(255,255,255,0.08),
+        0 10px 30px rgba(0,0,0,0.4),
+        0 0 35px rgba(221, 42, 123, 0.7);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.neon-button:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 0 0 6px rgba(255,255,255,0.12),
+        0 18px 45px rgba(0,0,0,0.5),
+        0 0 50px rgba(221, 42, 123, 0.9);
+}
+
+/* FUNDO INTERNO */
+.neon-button::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: 70px;
+    background: linear-gradient(180deg, #fafafa, #e6e6e6);
+    z-index: 0;
+}
+
+/* ÍCONE CIRCULAR — INSTAGRAM */
+.icon-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 200px;
+    height: 200px;
+    min-width: 200px;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #ffc99c,
+        #dd2a7b,
+        #8134af
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        inset 0 0 0 6px rgba(255,255,255,0.35),
+        0 0 25px rgba(221, 42, 123, 0.9);
+}
+
+.icon-wrapper img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+/* TEXTO */
+.button-text {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+    color: #111;
+    font-family: "Poppins", sans-serif;
+}
+
+.button-text small {
+    font-size: 14px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.button-text strong {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+/* EMAIL */
+.neon-button.email {
+    background: linear-gradient(
+        90deg,
+        #ea4335,
+        #c5221f,
+        #a50e0e
+    );
+
+    box-shadow:
+        0 0 0 6px rgba(255,255,255,0.08),
+        0 10px 30px rgba(0,0,0,0.4),
+        0 0 35px rgba(234, 67, 53, 0.7);
+}
+
+.neon-button.email:hover {
+    box-shadow:
+        0 0 0 6px rgba(255,255,255,0.12),
+        0 18px 45px rgba(0,0,0,0.5),
+        0 0 50px rgba(234, 67, 53, 0.9);
+}
+
+.neon-button.email .icon-wrapper {
+    background: linear-gradient(
+        135deg,
+        #ea4335,
+        #c5221f
+    );
+
+    box-shadow:
+        inset 0 0 0 6px rgba(255,255,255,0.35),
+        0 0 25px rgba(234, 67, 53, 0.9);
+}
+
+.neon-button.email:hover .icon-wrapper {
+    box-shadow:
+        inset 0 0 0 6px rgba(255,255,255,0.45),
+        0 0 35px rgba(234, 67, 53, 1);
+}
+
+
+/* LINKEDIN */
+.neon-button.linkedin {
+    background: linear-gradient(
+        90deg,
+        #0a66c2,
+        #004182,
+        #002f5f
+    );
+
+    box-shadow:
+        0 0 0 6px rgba(255,255,255,0.08),
+        0 10px 30px rgba(0,0,0,0.4),
+        0 0 35px rgba(10, 102, 194, 0.7);
+}
+
+.neon-button.linkedin:hover {
+    box-shadow:
+        0 0 0 6px rgba(255,255,255,0.12),
+        0 18px 45px rgba(0,0,0,0.5),
+        0 0 50px rgba(10, 102, 194, 0.9);
+}
+
+.neon-button.linkedin .icon-wrapper {
+    background: linear-gradient(
+        135deg,
+        #0a66c2,
+        #004182
+    );
+
+    box-shadow:
+        inset 0 0 0 6px rgba(255,255,255,0.35),
+        0 0 25px rgba(10, 102, 194, 0.9);
+}
+
+.neon-button.linkedin:hover .icon-wrapper {
+    box-shadow:
+        inset 0 0 0 6px rgba(255,255,255,0.45),
+        0 0 35px rgba(10, 102, 194, 1);
+}
+
+
+/* BOTÃO PRINCIPAL — TIKTOK */
+.neon-button.tiktok {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 300px;
+    border-radius: 80px;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    padding-left: 60px;
+    padding-right: 40px;
+
+    background: linear-gradient(
+        90deg,
+        #25F4EE,  /* Azul TikTok */
+        #000000,
+        #FE2C55   /* Rosa TikTok */
+    );
+
+    box-shadow:
+        0 0 0 6px rgba(255,255,255,0.08),
+        0 10px 30px rgba(0,0,0,0.45),
+        0 0 35px rgba(255, 255, 255, 0.7);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* HOVER BOTÃO */
+.neon-button.tiktok:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 0 0 6px rgba(255,255,255,0.12),
+        0 18px 45px rgba(0,0,0,0.6),
+        0 0 55px rgba(37, 244, 238, 0.9);
+}
+
+/* FUNDO INTERNO */
+.neon-button.tiktok::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: 70px;
+    background: linear-gradient(180deg, #fafafa, #e6e6e6);
+    z-index: 0;
+}
+
+/* ÍCONE CIRCULAR — TIKTOK */
+.neon-button.tiktok .icon-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 200px;
+    height: 200px;
+    min-width: 200px;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #25F4EE,
+        #000000,
+        #FE2C55
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        inset 0 0 0 6px rgba(255,255,255,0.35),
+        0 0 30px rgba(56, 48, 50, 0.9);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ÍCONE HOVER */
+.neon-button.tiktok:hover .icon-wrapper {
+    transform: scale(1.06) rotate(-3deg);
+    box-shadow:
+        inset 0 0 0 6px rgba(255,255,255,0.45),
+        0 0 45px rgba(37, 244, 238, 1);
+}
+
+/* IMAGEM DO ÍCONE */
+.neon-button.tiktok .icon-wrapper img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+/* TEXTO */
+.neon-button.tiktok .button-text {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+    color: #111;
+    font-family: "Poppins", sans-serif;
+    transition: transform 0.3s ease;
+}
+
+/* TEXTO HOVER */
+.neon-button.tiktok:hover .button-text {
+    transform: translateX(6px);
+}
+
+.neon-button.tiktok .button-text small {
+    font-size: 14px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.neon-button.tiktok .button-text strong {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0.15));
+}
+
+.link-item.portfolio .overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.15));
+}
+
+.link-item span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 0 0 12px rgba(0,0,0,0.7);
+}
+
+.link-item i {
+    font-size: 24px;
+}
+
+.link-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    opacity: 0.95;
+}
+
+/* Rodapé */
+.rodape {
+    margin-top: auto;
+    font-size: medium;
+    padding-top: 40px;
+    color: #fff;
+    font-size: 20px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    text-align: center;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .links {
+        gap: 20px;
+    }
+
+    /* BOTÕES NEON */
+    .neon-button,
+    .neon-button.whatsapp,
+    .neon-button.instagram,
+    .neon-button.email,
+    .neon-button.linkedin,
+    .neon-button.tiktok {
+        height: 160px;
+        border-radius: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 15px;
+    }
+
+    /* FUNDO INTERNO */
+    .neon-button::before,
+    .neon-button.whatsapp::before,
+    .neon-button.instagram::before,
+    .neon-button.email::before,
+    .neon-button.linkedin::before,
+    .neon-button.tiktok::before {
+        inset: 6px;
+        border-radius: 34px;
+    }
+
+    /* ÍCONE */
+    .icon-wrapper,
+    .neon-button.whatsapp .icon-wrapper,
+    .neon-button.instagram .icon-wrapper,
+    .neon-button.email .icon-wrapper,
+    .neon-button.linkedin .icon-wrapper,
+    .neon-button.tiktok .icon-wrapper {
+        width: 90px;
+        height: 90px;
+        min-width: 90px;
+    }
+
+    .icon-wrapper img,
+    .neon-button.tiktok .icon-wrapper img {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* TEXTO */
+    .button-text {
+        gap: 4px;
+    }
+
+    .button-text small {
+        font-size: 15px;
+        letter-spacing: 1.5px;
+    }
+
+    .button-text strong {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+
+    /* HOVER MAIS SUAVE NO MOBILE */
+    .neon-button:hover,
+    .neon-button.whatsapp:hover,
+    .neon-button.instagram:hover,
+    .neon-button.email:hover,
+    .neon-button.linkedin:hover,
+    .neon-button.tiktok:hover {
+        transform: translateY(-3px);
+    }
+
+    /* LOGO */
+    .logo {
+        max-width: 200px;
+    }
+
+    /* RODAPÉ */
+    .rodape {
+        font-size: 16px;
+        padding-top: 25px;
+    }
+}
+
+
+/* MAPS */
+.neon-button.maps {
+    background: linear-gradient(
+        90deg,
+        #2f3f39,
+        #3a4f47,
+        #26342f
+    );
+
+    box-shadow:
+        0 0 0 6px rgba(255,255,255,0.08),
+        0 10px 30px rgba(0,0,0,0.4),
+        0 0 35px rgba(62, 180, 150, 0.55);
+}
+
+.neon-button.maps:hover {
+    box-shadow:
+        0 0 0 6px rgba(255,255,255,0.12),
+        0 18px 45px rgba(0,0,0,0.5),
+        0 0 50px rgba(62, 180, 150, 0.8);
+}
+
+.neon-button.maps .icon-wrapper {
+    background: linear-gradient(
+        135deg,
+        #3eb496,
+        #2f8f78
+    );
+
+    box-shadow:
+        inset 0 0 0 6px rgba(255,255,255,0.35),
+        0 0 25px rgba(62, 180, 150, 0.9);
+}
+
+.neon-button.maps:hover .icon-wrapper {
+    box-shadow:
+        inset 0 0 0 6px rgba(255,255,255,0.45),
+        0 0 35px rgba(62, 180, 150, 1);
+}
+
+.neon-button.maps .icon-wrapper img {
+    width: 280px;
+    height: 280px;
+}
+
+/* TEXTO */
+.neon-button.tiktok .button-text {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+    color: #111;
+    font-family: "Poppins", sans-serif;
+    transition: transform 0.3s ease;
+}
+
+/* TEXTO HOVER */
+.neon-button.tiktok:hover .button-text {
+    transform: translateX(6px);
+}
+
+.neon-button.tiktok .button-text small {
+    font-size: 14px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.neon-button.tiktok .button-text strong {
+    font-size: 28px;
+    font-weight: 700;
+}
