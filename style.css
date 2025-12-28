@@ -695,8 +695,8 @@ body {
 }
 
 .neon-button.maps .icon-wrapper img {
-    width: 280px;
-    height: 280px;
+    width: 220px;
+    height: 220px;
 }
 
 .neon-button.tiktok .button-text {
@@ -726,3 +726,4 @@ body {
     font-weight: 700;
 
 }
+
